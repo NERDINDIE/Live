@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> The Live Updates!</title>
+    </head>
+    <body>
+        <div class="news-updates">
+            <h2>Updates!</h2>
+            <p>Here's the latest news and articles, coming from anytime!</p>
+        </div>
+        <!-- All caught up! -->
+    </div>
+    </body>
+</html>
+
+.news-container{
+    width: %75;
+    margin: 0 auto;
+    padding: 20 px;
+    background-color: #D2042D;
+}
+
+.news-updates{
+    border: 2 px solid #fff;
+    padding: 10 px;
+    margin-bottom: 10 px;
+    background-color:#A52A2A;
+}
+<script>
+    function addNewsUpdate(){
+        const newsContainer = document.querySelector ('.news-container');
+        const newsUpdate = document.createElement ('div');
+        newsUpdate.classList.add ('news-update');
+        newsUpdate.innerHTML = '
+        <h2> The Newsblog </h2>; 
+        <p> The pulse of the geek world</p>;
+        ';
+        newsContainer.prepend(newsUpdate);
+    }
+
+    setInterval(addNewsUpdate. 10000);
+</script>
+<script>
+    fetch('https://')
+    .then(response => response.json())
+    .then (data => {
+        // Process and display the news data.
+    })
+    .catch (error => {
+        console.error ('Error fetching news:' . error);
+    });
+</script>
