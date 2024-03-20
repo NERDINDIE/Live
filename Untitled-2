@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="userpage.html">
     <head>
         <title> User </title>
         <style>
@@ -17,7 +17,30 @@
             <title> New Post</title>
         </head>
         <style>
-            
+            .body{
+                font-family: 'Courier New', Courier, monospace;
+                background-color: white;
+                margin: 0;
+                padding: 20px;
+            }
+            .container{
+                max-width: 600px;
+                margin: 0 auto;
+                background-color: white;
+                padding: 20px;
+                border-radius: 5px;
+                f
+            }
         </style>
+        <div class="container">
+            <form id="postForm">
+                <textarea id="postContent" placeholder="Enter your content here"></textarea>
+                <button type="submit"> Post </button>
+            </form>
+            <div id="postContainer"></div>
+        </div>
+        <script>
+
+        </script>
     </body>
 </html>
