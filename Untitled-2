@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html id="userpage.html">
+    <head>
+        <title> User </title>
+        <style>
+            body {
+                font-size: medium;
+                font-family: 'Courier New', Courier, monospace;
+                background-color: #f0f0f0;
+                margin: 0;
+                padding : 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <head>
+            <title> New Post</title>
+        </head>
+        <style>
+            .body{
+                font-family: 'Courier New', Courier, monospace;
+                background-color: white;
+                margin: 0;
+                padding: 20px;
+            }
+            .container{
+                max-width: 600px;
+                margin: 0 auto;
+                background-color: white;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0,2px,5px rgba(0, 0, 0, 1);
+            }
+            .h1{
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            textarea{
+                width: 100%;
+                height: 100px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                resize: vertical;
+                margin-bottom: 10px;
+            }
+            button{
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                padding: 10px,20px;
+                border-radius: 5px;
+                cursor:pointer;
+            }
+            button:hover{
+                background-color: #0056b3;
+            }
+            #postsContainer{
+                margin-top: 20px;
+            }
+        </style>
+        <div class="container">
+            <form id="postForm">
+                <textarea id="postContent" placeholder="Enter your content here"></textarea>
+                <button type="submit"> Post </button>
+            </form>
+            <div id="postContainer"></div>
+        </div>
+        <script>
+            document.getElementById("postForm").addEventListener("submit", function (event){
+                event.preventDefault();
+                let postContent =document.getElementById ("postContent").value;
+                if (postContent.trim() !=="") {
+                    let postElement = document.createElement ("div");
+                    postElement.classList.add("post");
+                    postElement.textContent = postContent;
+                    let postsContainer = document.getElementById ("postsContainer");
+                    postsContainer.appendChild(postElement);
+                    document.getElementById("postContent").value ="";
+                }
+            });
+        </script>
+    </body>
+</html>
