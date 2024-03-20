@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> User </title>
+        <style>
+            body {
+                font-size: medium;
+                font-family: 'Courier New', Courier, monospace;
+                background-color: #f0f0f0;
+                margin: 0;
+                padding : 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <head>
+            <title> New Post</title>
+        </head>
+        <style>
+            
+        </style>
+    </body>
+</html>
