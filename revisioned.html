@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html id="fandom_times_live_mainpage.html">
+    <input id="email" name="email" type="email" placeholder="email" />
+    <br />
+    <input id="password" name="password" placeholder="enter a password"/>
+    <button> Login </button>
+    <head>
+        <style>
+            .h1 {
+                width:75px;
+                margin: 0 auto;
+                padding:20px;
+                background-color:#ff0000;
+            }
+            .content  {
+                margin-left: 175px;
+            };
+            .body {
+                font-family: 'Courier New', Courier, monospace;
+                margin: 0;
+                padding: 0;
+                background-color: #ffffff;
+            }
+            .news-container{
+                width: 75px;
+                margin:0 auto;
+                padding :20px;
+                background-color:#D2042D;
+            }
+            .news-updates{
+                border : 2px solid #ffffff;
+                padding: 10px;
+                margin-bottom: 10px;
+                background-color: #A52A2A;
+            }
+            .sidenav{
+                height :100%;
+                width: 150px;
+                position:fixed;
+                z-index:1;
+                top:0;
+                left:0;
+                background-color: #ffffff;
+                overflow-x: hidden;
+                padding-top: 25px;
+            }
+            .sidenav ul{
+                list-style: none;
+                padding:0;
+            }
+            .sidenav li{
+                padding: 10px 20px;
+            }
+            .sidenav a{
+                text-decoration: none;
+                color:#ffffff;
+                display: block;
+                transition: 0.3s;
+            }
+            .sidenav a:hover{
+                background-color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="sidenav">
+            <ul>
+                <li><a href="#"> Newsreels</a></li>
+                <li><a href="#"> The File </a></li>
+                <li><a href="#"> Columnists </a></li>
+                <li><a href="#"> The Fandom Radio</a></li>
+                <li><a href="#"> Paper Edition</a></li>
+                <li><a href="#"> Channels</a></li>
+            </ul>
+        </div>
+        <script>
+            function toggleNav () {
+                var sideNav = document.querySelector ('.sidenav');
+                sidenav.classList.toggle ("open");
+            }
+            var toggleButton= document.querySelector ("#toggle-button");
+            toggleButton.addEventListener ("click", toggleNav);
+        </script>
+    </body>
+    <input id="mysearch" name="search" type="search" />
+    <header>
+        <title style="color:crimson; background-color:#ffffff; font:25px; Courier_New;"> The Fandom Times </title>
+    </header>
+<body>
+    <div class="news-updates"
+    <h2 style= "font-size: medium; color:black; font:Gill_Sans;"> The Latest </h2>
+    <!-- For Now  -->
+</body>
+<body>
+    <head>
+        <title>The Live</title>
+    </head>
+    <script>
+        function addNewsUpdate () {
+            const newsContainer = document.querySelector ('.news-container');
+            const newsUpdates = document.createElement ('div');
+            newsUpdate.classList.add ('news-update');
+            newsUpdate.innerHTML='
+            <h2> The Live </h2>;
+            ';
+            newsContainer.prepend (newsUpdate);
+            setInterval(addNewsUpdate.10000);
+        };
+    </script>
+    <script>
+        fetch('https://');
+        .then (response => response.json());
+        try {
+            catch (error =>{
+                console.error ('Error fetching news'.error);
+            });
+        }
+    </script>
+</body>
