@@ -69,4 +69,13 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-                          
+const express = require("express");
+const app = express();
+const PORT = 3000;
+
+// Dummy station data
+const stations = [
+    { name: "Station 1", id: "station1", content: ["Song 1", "Song 2", "Song 3"] },
+    { name: "Station 2", id: "station2", content: ["Song A", "Song B", "Song C"] },
+    { name: "Station 3", id: "station3", content: ["Show X", "Show Y", "Show Z"] }
+    // Add more stations and content
