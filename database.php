@@ -40,3 +40,22 @@ if ($uploadOk == 0) {
     }
 }
 ?>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $fullName = $_POST["fullName"];
+    $email = $_POST["email"];
+    $website = $_POST["website"];
+    $message = $_POST["message"];
+
+    // Optionally, you can process the form data here
+    // For example, send an email notification to the website owner
+
+    // Send a success response to the client
+    http_response_code(200);
+    echo "Form submission successful";
+} else {
+    // Invalid request
+    http_response_code(400);
+    echo "Invalid request";
+}
+?>
