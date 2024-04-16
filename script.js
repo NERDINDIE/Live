@@ -259,4 +259,33 @@ router.post("/", upload.single("audio"), (req, res) => {
         });
     });
 });
-    
+document.addEventListener("DOMContentLoaded", function() {
+    const colorPicker = document.getElementById("colorPicker");
+    const fontSelect = document.getElementById("fontSelect");
+    const fontSizeRange = document.getElementById("fontSizeRange");
+    const saveThemeBtn = document.getElementById("saveThemeBtn");
+
+    // Function to save the theme
+    function saveTheme() {
+        const theme = {
+            color: colorPicker.value,
+            font: fontSelect.value,
+            fontSize: fontSizeRange.value
+        };
+
+        // Convert theme object to JSON string
+        const themeJson = JSON.stringify(theme);
+
+        // Create a Blob object from the JSON string
+        const blob = new Blob([themeJson], { type: "application/json" });
+
+        // Create a temporary anchor element
+        const anchor = document.createElement("a");
+        anchor.href = URL.createObjectURL(blob);
+        anchor.download = "custom_theme.json";
+        anchor.click();
+    }
+
+    // Event listener for save button click
+    saveThemeBtn.addEventListener("click", saveTheme);
+});    
