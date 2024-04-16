@@ -205,4 +205,21 @@ router.post("/", upload.single("audio"), (req, res) => {
     const { showId, title } = req.body;
     const newEpisode = {
         id: episodes.length + 1,
+        
+    const livePlayer = document.getElementById('livePlayer');
+
+    // Play the audio
+    function playAudio() {
+        livePlayer.play();
+    }
+
+    // Pause the audio
+    function pauseAudio() {
+        livePlayer.pause();
+    }
+
+    // Adjust volume
+    function setVolume(volume) {
+        livePlayer.volume = volume;
+    }
     
