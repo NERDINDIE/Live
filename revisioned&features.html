@@ -378,3 +378,35 @@
     <script src="scripts.js"></script>
 </body>
     </html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Theme Builder</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Theme Builder</h1>
+        
+        <!-- Theme Controls -->
+        <label for="colorPicker">Select Color:</label>
+        <input type="color" id="colorPicker" name="colorPicker">
+
+        <label for="fontSelect">Select Font:</label>
+        <select id="fontSelect" name="fontSelect">
+            <option value="Arial">Arial</option>
+            <option value="Helvetica">Helvetica</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <!-- Add more font options as needed -->
+        </select>
+
+        <label for="fontSizeRange">Adjust Font Size:</label>
+        <input type="range" id="fontSizeRange" name="fontSizeRange" min="10" max="24" step="1">
+
+        <!-- Save Theme Button -->
+        <button id="saveThemeBtn">Save Theme</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+        </html>
