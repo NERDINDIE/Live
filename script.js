@@ -222,4 +222,41 @@ router.post("/", upload.single("audio"), (req, res) => {
     function setVolume(volume) {
         livePlayer.volume = volume;
     }
+    document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("partnerInquiryForm");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        // Get form data
+        const formData = new FormData(form);
+        
+        // Optional: Validate form fields
+        const fullName = formData.get("fullName");
+        const email = formData.get("email");
+        const message = formData.get("message");
+
+        // You can add more validation here...
+
+        // Submit form data (replace with your server-side endpoint)
+        fetch("submit_form.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                // Form submission successful
+                alert("Your inquiry has been submitted. Thank you!");
+                form.reset();
+            } else {
+                // Handle error
+                alert("An error occurred. Please try again later.");
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("An error occurred. Please try again later.");
+        });
+    });
+});
     
