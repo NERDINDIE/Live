@@ -193,3 +193,37 @@
         console.error ('Error fetching news:' . error);
     });
 </script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Radio Broadcasting Panel</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="stations">
+            <!-- Radio station buttons -->
+            <button class="station-btn" data-station="station1">Station 1</button>
+            <button class="station-btn" data-station="station2">Station 2</button>
+            <button class="station-btn" data-station="station3">Station 3</button>
+            <!-- Add more station buttons as needed -->
+        </div>
+        <div class="content-library">
+            <!-- Content library display -->
+            <h2>Content Library</h2>
+            <h3>Show Series</h3>
+            <ul id="showSeriesList">
+                <!-- Show series items will be dynamically added here -->
+            </ul>
+
+            <h3>Podcasts</h3>
+            <ul id="podcastsList">
+                <!-- Podcast items will be dynamically added here -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+    </html>
+        
