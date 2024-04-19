@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html id="fandom_times_live_mainpage.html">
+    <input id="email" name="email" type="email" placeholder="email" />
+    <br />
+    <input id="password" name="password" placeholder="enter a password"/>
+    <button> Login </button>
+    <head>
+        <style>
+            .h1 {
+                width:75px;
+                margin: 0 auto;
+                padding:20px;
+                background-color:#ff0000;
+            }
+            .content  {
+                margin-left: 175px;
+            };
+            .body {
+                font-family: 'Courier New', Courier, monospace;
+                margin: 0;
+                padding: 0;
+                background-color: #ffffff;
+            }
+            .news-container{
+                width: 75px;
+                margin:0 auto;
+                padding :20px;
+                background-color:#D2042D;
+            }
+            .news-updates{
+                border : 2px solid #ffffff;
+                padding: 10px;
+                margin-bottom: 10px;
+                background-color: #A52A2A;
+            }
+            .sidenav{
+                height :100%;
+                width: 150px;
+                position:fixed;
+                z-index:1;
+                top:0;
+                left:0;
+                background-color: #ffffff;
+                overflow-x: hidden;
+                padding-top: 25px;
+            }
+            .sidenav ul{
+                list-style: none;
+                padding:0;
+            }
+            .sidenav li{
+                padding: 10px 20px;
+            }
+            .sidenav a{
+                text-decoration: none;
+                color:#ffffff;
+                display: block;
+                transition: 0.3s;
+            }
+            .sidenav a:hover{
+                background-color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="sidenav">
+            <ul>
+                <li><a href="#"> Newsreels</a></li>
+                <li><a href="#"> The File </a></li>
+                <li><a href="#"> Columnists </a></li>
+                <li><a href="#"> The Fandom Radio</a></li>
+                <li><a href="#"> Paper Edition</a></li>
+                <li><a href="#"> Channels</a></li>
+            </ul>
+        </div>
+        <script>
+            function toggleNav () {
+                var sideNav = document.querySelector ('.sidenav');
+                sidenav.classList.toggle ("open");
+            }
+            var toggleButton= document.querySelector ("#toggle-button");
+            toggleButton.addEventListener ("click", toggleNav);
+        </script>
+    </body>
+    <input id="mysearch" name="search" type="search" />
+    <header>
+        <title style="color:crimson; background-color:#ffffff; font:25px; Courier_New;"> The Fandom Times </title>
+    </header>
+<body>
+    <div class="news-updates"
+    <h2 style= "font-size: medium; color:black; font:Gill_Sans;"> The Latest </h2>
+    <!-- For Now  -->
+</body>
+<body>
+    <head>
+        <title>The Live</title>
+    </head>
+    <script>
+        function addNewsUpdate () {
+            const newsContainer = document.querySelector ('.news-container');
+            const newsUpdates = document.createElement ('div');
+            newsUpdate.classList.add ('news-update');
+            newsUpdate.innerHTML='
+            <h2> The Live </h2>;
+            ';
+            newsContainer.prepend (newsUpdate);
+            setInterval(addNewsUpdate.10000);
+        };
+    </script>
+    <script>
+        fetch('https://');
+        .then (response => response.json());
+        try {
+            catch (error =>{
+                console.error ('Error fetching news'.error);
+            });
+        }
+    </script>
+</body>
+<!DOCTYPE html>
+<html>
+    <head>
+   <title> Test </title>    
+    </head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1> Test </h1>
+        <p> January 1st, 2000</p>
+    </header>
+    <!-- Article-->
+    <article>
+        <h2>Test test Test</h2>
+        <p> Lorem ipsum.</p>
+    </article>
+    <!-- Author -->
+    <section>
+        <p>Xavier</p>
+    </section>
+    <!-- Geek Live-->
+    <a href="homepage.html">Homepage</a>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> The Live Updates!</title>
+    </head>
+    <body>
+        <div class="news-updates">
+            <h2>Updates!</h2>
+            <p>Here's the latest news and articles, coming from anytime!</p>
+        </div>
+        <!-- All caught up! -->
+    </div>
+    </body>
+</html>
+
+.news-container{
+    width: %75;
+    margin: 0 auto;
+    padding: 20 px;
+    background-color: #D2042D;
+}
+
+.news-updates{
+    border: 2 px solid #fff;
+    padding: 10 px;
+    margin-bottom: 10 px;
+    background-color:#A52A2A;
+}
+<script>
+    function addNewsUpdate(){
+        const newsContainer = document.querySelector ('.news-container');
+        const newsUpdate = document.createElement ('div');
+        newsUpdate.classList.add ('news-update');
+        newsUpdate.innerHTML = '
+        <h2> The Newsblog </h2>; 
+        <p> The pulse of the geek world</p>;
+        ';
+        newsContainer.prepend(newsUpdate);
+    }
+
+    setInterval(addNewsUpdate. 10000);
+</script>
+<script>
+    fetch('https://')
+    .then(response => response.json())
+    .then (data => {
+        // Process and display the news data.
+    })
+    .catch (error => {
+        console.error ('Error fetching news:' . error);
+    });
+</script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Radio</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="stations">
+            <button class="station-btn" data-station="station1"> The Fandom Radio 1</button>
+            <button class="station-btn" data-station="station2"> The Fandom Radio 2</button>
+            <button class="station-btn" data-station="station3"> The Fandom Radio 3</button>
+        </div>
+        <div class="content-library">
+            <h2>Content Library</h2>
+            <h3>Show Series</h3>
+            <ul id="showSeriesList">
+            </ul>
+            <h3>Podcasts</h3>
+            <ul id="podcastsList">
+            </ul>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+    </html>
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Radio Broadcasting Panel</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="stations">
+            <!-- Radio station buttons -->
+            <button class="station-btn" data-station="station1">The Fandom Radio 1</button>
+            <button class="station-btn" data-station="station2"> The Fandom Radio 2</button>
+            <button class="station-btn" data-station="station3">The Fandom Radio 3</button>
+            <!-- Add more station buttons as needed -->
+        </div>
+        <div class="content-library">
+            <!-- Content library display -->
+            <h2>Content Library</h2>
+            <ul id="contentList">
+                <!-- Content items will be dynamically added here -->
+            </ul>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <img src="profile.jpg" alt="Profile Picture">
+            <h1>John Doe</h1>
+            <p>Web Developer</p>
+        </div>
+        <div class="profile-body">
+            <h2>About Me</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor elit vel justo pharetra, ut dapibus odio feugiat.</p>
+            <h3>Contact Information</h3>
+            <ul>
+                <li>Email: johndoe@example.com</li>
+                <li>Phone: 123-456-7890</li>
+                <li>Website: <a href="https://www.example.com">www.example.com</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+    </html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Radio Player</title>
+</head>
+<body>
+    <h1>Live Radio Player</h1>
+    <audio id="livePlayer" controls>
+        <source src="http://your-streaming-server/live-stream" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+    </html>    
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Audio Recorder</title>
+</head>
+<body>
+    <h1>Live Audio Recorder</h1>
+    
+    <!-- Recorder Controls -->
+    <button id="startRecording" onclick="startRecording()">Start Recording</button>
+    <button id="stopRecording" onclick="stopRecording()">Stop Recording</button>
+    
+    <!-- Audio Player for Recorded Audio -->
+    <audio id="recordedAudio" controls></audio>
+    
+    <!-- Include Recorder.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/recorder-js/dist/recorder.js"></script>
+    
+    <!-- Your JavaScript Code -->
+    <script>
+        let recorder;
+
+        // Initialize the Recorder
+        function initializeRecorder() {
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    recorder = new Recorder(stream);
+                })
+                .catch(error => {
+                    console.error('Error accessing microphone:', error);
+                });
+        }
+
+        // Start Recording
+        function startRecording() {
+            if (!recorder) {
+                initializeRecorder();
+            }
+
+            recorder.start();
+        }
+
+        // Stop Recording
+        function stopRecording() {
+            if (recorder && recorder.recording) {
+                recorder.stop();
+                recorder.exportWAV(handleRecording);
+            }
+        }
+
+        // Handle the Recorded Audio
+        function handleRecording(blob) {
+            const audioUrl = URL.createObjectURL(blob);
+            const recordedAudio = document.getElementById('recordedAudio');
+            recordedAudio.src = audioUrl;
+        }
+    </script>
+</body>
+    </html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Partner Content Creator Inquiry</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Partner Content Creator Inquiry</h1>
+        <form id="partnerInquiryForm">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="website">Website</label>
+                <input type="url" id="website" name="website">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+    </html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Theme Builder</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Theme Builder</h1>
+        
+        <!-- Theme Controls -->
+        <label for="colorPicker">Select Color:</label>
+        <input type="color" id="colorPicker" name="colorPicker">
+
+        <label for="fontSelect">Select Font:</label>
+        <select id="fontSelect" name="fontSelect">
+            <option value="Arial">Arial</option>
+            <option value="Helvetica">Helvetica</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <!-- Add more font options as needed -->
+        </select>
+
+        <label for="fontSizeRange">Adjust Font Size:</label>
+        <input type="range" id="fontSizeRange" name="fontSizeRange" min="10" max="24" step="1">
+
+        <!-- Save Theme Button -->
+        <button id="saveThemeBtn">Save Theme</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+        </html>
+<!-- HTML form for file upload -->
+<input type="file" id="fileInput">
+<button onclick="uploadFile()">Upload</button>
+
+<script>
+function uploadFile() {
+  const fileInput = document.getElementById('fileInput');
+  const file = fileInput.files[0];
+
+  const formData = new FormData();
+  formData.append('file', file);
+
+  fetch('/upload', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      alert('File uploaded successfully!');
+    } else {
+      alert('Failed to upload file.');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('An error occurred while uploading the file.');
+  });
+}
+            </script>
+ <!-- HTML for rendering flipbook -->
+<div class="flipbook">
+  <!-- Pages will be dynamically generated here -->
+</div>           

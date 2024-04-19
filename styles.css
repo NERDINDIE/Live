@@ -1,0 +1,299 @@
+.news-container{
+    width:75px;
+    margin: 0 auto;
+    padding:20px;
+    background-color: #D2042D;
+}
+.news-updates{
+    border: 2px solid #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color:#A52A2A;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+}
+.sidenav{
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left:0;
+    background-color: #fff;
+    overflow-x: hidden;
+    padding-top: 25px;
+}
+.sidenav ul{
+    list-style: none;
+    padding: 0;
+}
+.sidenav li{
+    padding: 10px 20px;
+}
+.sidenav a{
+    text-decoration: none;
+    color: #fff;
+    display:block;
+    transition: 0.3s;
+}
+.sidenav a:hover{
+    background-color: #555;
+}
+.content{
+    margin-left: 175px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.stations {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.station-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.station-btn:hover {
+    background-color: #0056b3;
+}
+
+.content-library h2 {
+    margin-bottom: 10px;
+}
+
+#contentList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#contentList li {
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+#contentList li:last-child {
+    border-bottom: none;
+}
+.content-library h3 {
+    margin-top: 20px;
+}
+
+.content-library ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.content-library ul li {
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+.content-library ul li:last-child {
+    border-bottom: none;
+    }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.profile-header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.profile-header p {
+    color: #777;
+}
+
+.profile-body h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.profile-body p {
+    line-height: 1.5;
+    color: #333;
+}
+
+.profile-body ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.profile-body ul li {
+    margin-bottom: 5px;
+}
+
+.profile-body ul li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.profile-body ul li a:hover {
+    text-decoration: underline;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="color"],
+select,
+input[type="range"],
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+/* CSS for flipbook styling */
+.flipbook {
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform-style: preserve-3d;
+  transform-origin: 0 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
