@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+.lock-screen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallpaper {
+  width: 100%;
+  height: 70%;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+}
+
+.clock {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.weather, .news, .radio-player {
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.news {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.radio-player {
+  /* Styles for radio player */
+}
+.cli {
+  background-color: #001f3f;
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.input-area {
+  display: flex;
+  align-items: center;
+}
+
+.input-area span {
+  color: #00ff00;
+}
+
+.input-area input {
+  background-color: transparent;
+  border: none;
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  outline: none;
+  width: 80%;
+}
+
+.output-area {
+  margin-top: 10px;
+  white-space: pre-wrap;
+}
