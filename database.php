@@ -59,3 +59,60 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Invalid request";
 }
 ?>
+<?php
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["file"])) {
+    $targetDir = "uploads/";
+    $targetFile = $targetDir . basename($_FILES["file"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+    
+    // Check if file is a PDF
+    if ($imageFileType !== "pdf") {
+        echo "Only PDF files are allowed.";
+        $uploadOk = 0;
+    }
+    
+    // Check if file already exists
+    if (file_exists($targetFile)) {
+        echo "File already exists.";
+        $uploadOk = 0;
+    }
+    
+    // Check file size
+    if ($_FILES["file"]["size"] > 5000000) { // Adjust as needed
+        echo "File is too large.";
+        $uploadOk = 0;
+    }
+    
+    // Allow certain file formats
+    if ($imageFileType !== "pdf") {
+        echo "Only PDF files are allowed.";
+        $uploadOk = 0;
+    }
+    
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk === 0) {
+        echo "File was not uploaded.";
+    } else {
+        if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFile)) {
+            echo "The file " . basename($_FILES["file"]["name"]) . " has been uploaded.";
+            // Process the uploaded file (e.g., save to storage, trigger conversion)
+        } else {
+            echo "Error uploading file.";
+        }
+    }
+}
+?>
+<?php
+// Command to convert PDF to images using ImageMagick
+$command = "convert path/to/input/file.pdf path/to/output/directory/output.jpg";
+
+// Execute the command
+exec($command, $output, $returnVar);
+
+if ($returnVar === 0) {
+    echo "Conversion successful.";
+} else {
+    echo "Error converting PDF to images.";
+}
+?>
