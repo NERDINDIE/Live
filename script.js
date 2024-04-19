@@ -289,3 +289,55 @@ document.addEventListener("DOMContentLoaded", function() {
     // Event listener for save button click
     saveThemeBtn.addEventListener("click", saveTheme);
 });    
+const express = require('express');
+const multer = require('multer');
+const path = require('path');
+
+const app = express();
+const upload = multer({ dest: 'uploads/' });
+
+app.post('/upload', upload.single('file'), (req, res) => {
+  const uploadedFile = req.file;
+  // Process the uploaded file (e.g., save to storage, trigger conversion)
+  res.sendStatus(200);
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+const pdf2img = require('pdf2img');
+const fs = require('fs');
+
+function convertPDFToImages(pdfFilePath, outputDirectory) {
+  pdf2img.setOptions({
+    type: 'jpg',
+    size: 1024,
+    density: 600,
+  });
+
+  pdf2img.convert(pdfFilePath, { outputformat: 'jpg', outputdir: outputDirectory }, (err, info) => {
+    if (err) {
+      console.error('Error converting PDF to images:', err);
+    } else {
+      console.log('Conversion successful:', info);
+    }
+  });
+}
+
+// Example usage:
+const pdfFilePath = 'path/to/pdf/file.pdf';
+const outputDirectory = 'path/to/output/directory';
+convertPDFToImages(pdfFilePath, outputDirectory);
+    // JavaScript for customization options
+const flipbookElement = document.querySelector('.flipbook');
+
+function customizeFlipbook(options) {
+  // Apply customization options (e.g., page flip animation, navigation controls)
+  flipbookElement.style.animation = `flip ${options.animationDuration}s forwards`;
+}
+
+// Example usage:
+const customizationOptions = {
+  animationDuration: 1.5 // seconds
+};
+customizeFlipbook(customizationOptions);
