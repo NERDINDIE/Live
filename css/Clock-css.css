@@ -1,0 +1,10 @@
+#date-time-widget {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#current-date, #current-time, #edition {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
