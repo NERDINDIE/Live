@@ -1,0 +1,33 @@
+using Windows.UI.Notifications;
+using Windows.Data.Xml.Dom;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+
+namespace LiveTileExample
+{
+    public sealed partial class MainPage : Page
+    {
+        public MainPage()
+        {
+            this.InitializeComponent();
+        }
+
+        private void UpdateTile_Click(object sender, RoutedEventArgs e)
+        {
+            string tileXmlString = @"
+            <tile>
+                <visual>
+                    <binding template='TileSquare150x150Text04'>
+                        <text id='1'>Hello, World!</text>
+                    </binding>
+                </visual>
+            </tile>";
+
+            XmlDocument tileXml = new XmlDocument();
+            tileXml.LoadXml(tileXmlString);
+
+            TileNotification tileNotification = new TileNotification(tileXml);
+            TileUpdateManager.CreateTileUpdaterForApplication().Update(tileNotification);
+        }
+    }
+}
