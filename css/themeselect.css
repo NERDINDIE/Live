@@ -1,0 +1,133 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Theme 1 (Default) */
+body.theme-1 {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+body.theme-1 header,
+body.theme-1 footer {
+    background-color: #000000;
+}
+
+body.theme-1 h1,
+body.theme-1 h2,
+body.theme-1 .btn {
+    color: #ff0000;
+}
+
+/* Theme 2 */
+body.theme-2 {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.theme-2 header,
+body.theme-2 footer {
+    background-color: #f0f0f0;
+}
+
+body.theme-2 h1,
+body.theme-2 h2,
+body.theme-2 .btn {
+    color: #0078d7;
+}
+
+/* Theme 3 */
+body.theme-3 {
+    background-color: #f5f5f5;
+    color: #333333;
+}
+
+body.theme-3 header,
+body.theme-3 footer {
+    background-color: #444444;
+}
+
+body.theme-3 h1,
+body.theme-3 h2,
+body.theme-3 .btn {
+    color: #ff4500;
+}
+
+/* Header Styling */
+header {
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+/* Navigation Bar Styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+nav select {
+    margin-left: 20px;
+    padding: 5px;
+}
+
+/* Main Content Styling */
+main {
+    padding: 20px;
+}
+
+main section {
+    margin-bottom: 20px;
+}
+
+/* Button Styling */
+.btn {
+    background-color: transparent;
+    border: 2px solid currentColor;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: currentColor;
+    color: #ffffff;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
