@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Radio Player</title>
+</head>
+<body>
+    <h1>Live Radio Player</h1>
+    <audio id="livePlayer" controls>
+        <source src="http://your-streaming-server/live-stream" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+    </html>    
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Audio Recorder</title>
+</head>
+<body>
+    <h1>Live Audio Recorder</h1>
+    
+    <!-- Recorder Controls -->
+    <button id="startRecording" onclick="startRecording()">Start Recording</button>
+    <button id="stopRecording" onclick="stopRecording()">Stop Recording</button>
+    
+    <!-- Audio Player for Recorded Audio -->
+    <audio id="recordedAudio" controls></audio>
+    
+    <!-- Include Recorder.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/recorder-js/dist/recorder.js"></script>
+    
+    <!-- Your JavaScript Code -->
+    <script>
+        let recorder;
+
+        // Initialize the Recorder
+        function initializeRecorder() {
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    recorder = new Recorder(stream);
+                })
+                .catch(error => {
+                    console.error('Error accessing microphone:', error);
+                });
+        }
+
+        // Start Recording
+        function startRecording() {
+            if (!recorder) {
+                initializeRecorder();
+            }
+
+            recorder.start();
+        }
+
+        // Stop Recording
+        function stopRecording() {
+            if (recorder && recorder.recording) {
+                recorder.stop();
+                recorder.exportWAV(handleRecording);
+            }
+        }
+
+        // Handle the Recorded Audio
+        function handleRecording(blob) {
+            const audioUrl = URL.createObjectURL(blob);
+            const recordedAudio = document.getElementById('recordedAudio');
+            recordedAudio.src = audioUrl;
+        }
+    </script>
+</body>
+</html>
