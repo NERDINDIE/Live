@@ -1,0 +1,54 @@
+.h1 {
+                width:75px;
+                margin: 0 auto;
+                padding:20px;
+                background-color:#ff0000;
+            }
+            .content  {
+                margin-left: 175px;
+            };
+            .body {
+                font-family: 'Courier New', Courier, monospace;
+                margin: 0;
+                padding: 0;
+                background-color: #ffffff;
+            }
+            .news-container{
+                width: 75px;
+                margin:0 auto;
+                padding :20px;
+                background-color:#D2042D;
+            }
+            .news-updates{
+                border : 2px solid #ffffff;
+                padding: 10px;
+                margin-bottom: 10px;
+                background-color: #A52A2A;
+            }
+            .sidenav{
+                height :100%;
+                width: 150px;
+                position:fixed;
+                z-index:1;
+                top:0;
+                left:0;
+                background-color: #ffffff;
+                overflow-x: hidden;
+                padding-top: 25px;
+            }
+            .sidenav ul{
+                list-style: none;
+                padding:0;
+            }
+            .sidenav li{
+                padding: 10px 20px;
+            }
+            .sidenav a{
+                text-decoration: none;
+                color:#ffffff;
+                display: block;
+                transition: 0.3s;
+            }
+            .sidenav a:hover{
+                background-color: #555;
+            }
