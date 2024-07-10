@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#extensions-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.extension {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+  text-align: left;
+}
+
+.extension h2 {
+  margin-top: 0;
+}
