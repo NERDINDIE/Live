@@ -1,0 +1,13 @@
+.updates {
+    font-family: Arial, sans-serif;
+}
+
+.update {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.update.important {
+    font-weight: bold;
+    background-color: #ffe0e0;
+}
