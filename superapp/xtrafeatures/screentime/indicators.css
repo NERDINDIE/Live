@@ -1,0 +1,14 @@
+.balance-indicators {
+  display: flex;
+  flex-direction: column;
+}
+
+.indicator {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 5px 0;
+}
+
+.indicator span {
+  font-weight: bold;
+}
