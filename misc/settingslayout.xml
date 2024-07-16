@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/tabButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true">
+
+        <Button
+            android:id="@+id/btnGeneral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="General" />
+
+        <Button
+            android:id="@+id/btnAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Account" />
+
+        <Button
+            android:id="@+id/btnPrivacy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Privacy" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutGeneral"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/tabButtons"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="General Settings" />
+
+        <!-- Add more general settings here -->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutAccount"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/tabButtons"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Account Settings" />
+
+        <!-- Add more account settings here -->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutPrivacy"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/tabButtons"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Privacy Settings" />
+
+        <!-- Add more privacy settings here -->
+
+    </LinearLayout>
+</RelativeLayout>
