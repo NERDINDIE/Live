@@ -1,3 +1,4 @@
+<?php
 $allowed_types = ['image/jpeg', 'image/png', 'application/pdf'];
 if (!in_array($_FILES['file']['type'], $allowed_types)) {
     die('Invalid file type');
