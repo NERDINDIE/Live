@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Website Settings</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="settings">
+            <h2>Settings</h2>
+            <div class="tabs">
+                <button class="tab-button" onclick="showTab('general')">General</button>
+                <button class="tab-button" onclick="showTab('account')">Account</button>
+                <button class="tab-button" onclick="showTab('privacy')">Privacy</button>
+            </div>
+            <div id="general" class="tab-content">
+                <h3>General Settings</h3>
+                <label for="theme">Theme:</label>
+                <select id="theme">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
+            </div>
+            <div id="account" class="tab-content" style="display:none;">
+                <h3>Account Settings</h3>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div id="privacy" class="tab-content" style="display:none;">
+                <h3>Privacy Settings</h3>
+                <label for="tracking">Tracking:</label>
+                <input type="checkbox" id="tracking" name="tracking">
+            </div>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
