@@ -1,0 +1,35 @@
+const events = {
+    movies: [
+        { name: 'Movie 1', date: '2024-07-20', location: 'Cinema 1' },
+        { name: 'Movie 2', date: '2024-07-25', location: 'Cinema 2' },
+    ],
+    plays: [
+        { name: 'Play 1', date: '2024-08-05', location: 'Theater 1' },
+        { name: 'Play 2', date: '2024-08-10', location: 'Theater 2' },
+    ],
+    concerts: [
+        { name: 'Concert 1', date: '2024-08-15', location: 'Concert Hall 1' },
+        { name: 'Concert 2', date: '2024-08-20', location: 'Concert Hall 2' },
+    ]
+};
+
+function showTab(tabName) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => {
+        tab.style.display = 'none';
+    });
+    document.getElementById(tabName).style.display = 'block';
+}
+
+function loadEvents() {
+    for (const category in events) {
+        const list = document.getElementById(`${category}-list`);
+        events[category].forEach(event => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${event.name} - ${event.date} - ${event.location}`;
+            list.appendChild(listItem);
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', loadEvents);
