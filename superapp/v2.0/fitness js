@@ -1,0 +1,15 @@
+document.getElementById('fitness-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const exercise = document.getElementById('exercise').value;
+    const duration = document.getElementById('duration').value;
+    
+    const logEntry = document.createElement('li');
+    logEntry.textContent = `${exercise} - ${duration} minutes`;
+    
+    document.getElementById('exercise-log').appendChild(logEntry);
+    
+    // Clear the form
+    document.getElementById('exercise').value = '';
+    document.getElementById('duration').value = '';
+});
