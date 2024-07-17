@@ -116,3 +116,66 @@
                 });
             }
         }
+function sendFriendRequest() {
+            const friendUsername = document.getElementById('friend-username').value;
+            fetch('/send-friend-request', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-access-token': socket.io.opts.query.token
+                },
+                body: JSON.stringify({ to: friendUsername })
+            }).then(response => response.json())
+              .then(data => {
+                  alert(data.message);
+              });
+        }
+
+        function fetchFriends() {
+            fetch('/friends', {
+                headers: {
+                    'x-access-token': socket.io.opts.query.token
+                }
+            }).then(response => response.json())
+              .then(friends => {
+                  const friendsList = document.getElementById('friends');
+                  friends.forEach(friend => {
+                      const item = document.createElement('li');
+                      item.textContent = friend;
+                      friendsList.appendChild(item);
+                  });
+              });
+        }
+
+        function fetchEvents() {
+            fetch('/events')
+                .then(response => response.json())
+                .then(events => {
+                    const moviesList = document.getElementById('movies-list');
+                    const concertsList = document.getElementById('concerts-list');
+                    const playsList = document.getElementById('plays-list');
+
+                    events.forEach(event => {
+                        const item = document.createElement('li');
+                        item.textContent = `${event.name} - ${event.date} - ${event.location}`;
+
+                        if (event.type === 'movie') {
+                            moviesList.appendChild(item);
+                        } else if (event.type === 'concert') {
+                            concertsList.appendChild(item);
+                        } else if (event.type === 'play') {
+                            playsList.appendChild(item);
+                        }
+                    });
+                });
+        }
+
+        function showTab(tabId) {
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
