@@ -1,0 +1,9 @@
+<button onclick="shareScore()">Share Score</button>
+
+<script>
+    function shareScore() {
+        const score = 100; // Replace with actual score
+        const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com&quote=I scored ${score} points!`;
+        window.open(shareUrl, '_blank');
+    }
+</script>
