@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat App</title>
+    <style>
+        ul { list-style-type: none; padding: 0; }
+        li { padding: 8px; margin-bottom: 10px; background-color: #f3f3f3; }
+        input { padding: 10px; width: 80%; }
+        button { padding: 10px; }
+        .read { background-color: #d3ffd3; }
+        .tab { display: none; }
+        .tab.active { display: block; }
+        .online { color: green; }
+        .offline { color: red; }
+    </style>
+</head>
+<body>
+    <div id="auth">
+        <h2>Login</h2>
+        <input id="username" placeholder="Username">
+        <input id="password" placeholder="Password" type="password">
+        <button onclick="login()">Login</button>
+    </div>
+    <div id="chat" style="display:none;">
+        <h3>Friends</h3>
+        <ul id="friends"></ul>
+        <input id="friend-username" placeholder="Friend's Username">
+        <button onclick="sendFriendRequest()">Add Friend</button>
+        <h3>Chat</h3>
+        <ul id="messages"></ul>
+        <input id="m" autocomplete="off"><button onclick="sendMessage()">Send</button>
+
+        <h3>Events</h3>
+        <div>
+            <button onclick="showTab('movies')">Movies</button>
+            <button onclick="showTab('concerts')">Concerts</button>
+            <button onclick="showTab('plays')">Plays</button>
+        </div>
+        <div id="movies" class="tab">
+            <ul id="movies-list"></ul>
+        </div>
+        <div id="concerts" class="tab">
+            <ul id="concerts-list"></ul>
+        </div>
+        <div id="plays" class="tab">
+            <ul id="plays-list"></ul>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        let socket;
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            fetch('/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            }).then(response => response.json())
+              .then(data => {
+                  if (data.auth) {
+                      document.getElementById('auth').style.display = 'none';
+                      document.getElementById('chat').style.display = 'block';
+                      socket = io({ query: { token: data.token } });
+
+                      socket.on('previous messages', function(messages) {
+                          messages.forEach(msg => {
+                              addMessageToUI(msg);
+                          });
+                      });
+
+                      socket.on('chat message', function(msg) {
+                          addMessageToUI(msg);
+                          showNotification(msg);
+                      });
+
+                      socket.on('message read', function(msgId) {
+                          document.getElementById(msgId).classList.add('read');
+                      });
+
+                      socket.on('user status', function({ userId, status }) {
+                          updateUserStatus(userId, status);
+                      });
+
+                      fetchFriends();
+                      fetchEvents();
+                  } else {
+                      alert('Login failed');
+                  }
+              });
+        }
+
+        function sendMessage() {
+            const message = document.getElementById('m').value;
+            socket.emit('chat message', message);
+            document.getElementById('m').value = '';
+        }
+
+        function addMessageToUI(msg) {
+            const item = document.createElement('li');
+            item.textContent = `${msg.user}: ${msg.text}`;
+            item.id = msg.id;
+            if (msg.read) {
+                item.classList.add('read');
+            }
+            item.onclick = () => {
+                socket.emit('message read', msg.id);
+            };
+            document.getElementById('messages').appendChild(item);
+        }
+
+        function showNotification(msg) {
+            if (Notification.permission === 'granted') {
+                new Notification(`${msg.user}: ${msg.text}`);
+            } else if (Notification.permission !== 'denied') {
+                Notification.requestPermission().then(permission => {
+                    if (permission === 'granted') {
+                        new Notification(`${msg.user}: ${msg.text}`);
+                    }
+                });
+            }
+        }
+
+        function sendFriendRequest() {
+            const friendUsername = document.getElementById('friend-username').value;
+            fetch('/send-friend-request', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-access-token': socket.io.opts.query.token
+                },
+                body: JSON.stringify({ to: friendUsername })
+            }).then(response => response.json())
+              .then(data => {
+                  alert(data.message);
+              });
+        }
+
+        function fetchFriends() {
+            fetch('/friends', {
+                headers: {
+                    'x-access-token': socket.io.opts.query.token
+                }
+            }).then(response => response.json())
+              .then(friends => {
+                  const friendsList = document.getElementById('friends');
+                  friends.forEach(friend => {
+                      const item = document.createElement('li');
+                      item.textContent = friend;
+                      item.id = `friend-${friend}`;
+                      friendsList.appendChild(item);
+                  });
+              });
+        }
+
+        function fetchEvents() {
+            fetch('/events')
+                .then(response => response.json())
+                .then(events => {
+                    const moviesList = document.getElementById('movies-list');
+                    const concertsList = document.getElementById('concerts-list');
+                    const playsList = document.getElementById('plays-list');
+
+                    events.forEach(event => {
+                        const item = document.createElement('li');
+                        item.textContent = `${event.name} - ${event.date} - ${event.location}`;
+
+                        if (event.type === 'movie') {
+                            moviesList.appendChild(item);
+                        } else if (event.type === 'concert') {
+                            concertsList.appendChild(item);
+                        } else if (event.type === 'play') {
+                            playsList.appendChild(item);
+                        }
+                    });
+                });
+        }
+
+        function showTab(tabId) {
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        function updateUserStatus(userId, status) {
+            const friendItem = document.getElementById(`friend-${userId}`);
+            if (friendItem) {
+                friendItem.className = status;
+            }
+        }
+    </script>
+</body>
+</html>
