@@ -1,0 +1,29 @@
+<input type="file" id="file">
+<button onclick="sendFile()">Send File</button>
+
+<script>
+    function sendFile() {
+        const fileInput = document.getElementById('file');
+        const file = fileInput.files[0];
+        const formData = new FormData();
+        formData.append('file', file);
+
+        fetch('/upload', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            socket.emit('media message', data.filePath);
+        });
+    }
+
+    socket.on('media message', (filePath) => {
+        const item = document.createElement('li');
+        const fileLink = document.createElement('a');
+        fileLink.href = filePath;
+        fileLink.textContent = 'View File';
+        item.appendChild(fileLink);
+        document.getElementById('messages').appendChild(item);
+    });
+              </script>
