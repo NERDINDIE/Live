@@ -1,0 +1,26 @@
+<style>
+    .typing-indicator {
+        font-style: italic;
+        color: gray;
+    }
+</style>
+
+<div id="typing-indicator" class="typing-indicator"></div>
+
+<script>
+    let typingTimeout;
+
+    document.getElementById('m').addEventListener('input', () => {
+        clearTimeout(typingTimeout);
+        socket.emit('typing', true);
+
+        typingTimeout = setTimeout(() => {
+            socket.emit('typing', false);
+        }, 1000);
+    });
+
+    socket.on('typing', ({ user, isTyping }) => {
+        const indicator = document.getElementById('typing-indicator');
+        indicator.textContent = isTyping ? `${user} is typing...` : '';
+    });
+</script>
